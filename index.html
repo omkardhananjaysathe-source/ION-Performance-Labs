@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ION Performance Labs</title>
+    <style>
+        /* --- 1. THEME & COLORS --- */
+        :root {
+            --bg-color: #000000; /* Pure Black for max contrast */
+            --card-bg: #111;
+            --text-white: #ffffff;
+            --text-grey: #b0b0b0;
+            --accent: #ccff00; /* The Volt Green */
+            --border: #333;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-white);
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Cleaner, Sportier font */
+            line-height: 1.5;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding-top: 50px;
+            padding-bottom: 60px;
+        }
+
+        /* --- 2. THE SPORTY LOGO --- */
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .logo-svg {
+            width: 240px; 
+            height: auto;
+            margin-bottom: 10px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* The "Heartbeat" Pulse Animation */
+        .bolt-pulse {
+            animation: pulse-glow 2s infinite ease-in-out;
+            transform-origin: center;
+        }
+
+        @keyframes pulse-glow {
+            0% { fill-opacity: 0.8; filter: drop-shadow(0 0 2px var(--accent)); transform: scale(1); }
+            50% { fill-opacity: 1; filter: drop-shadow(0 0 15px var(--accent)); transform: scale(1.05); }
+            100% { fill-opacity: 0.8; filter: drop-shadow(0 0 2px var(--accent)); transform: scale(1); }
+        }
+
+        .tagline {
+            font-size: 11px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-weight: 700;
+            font-style: italic; /* Speed */
+        }
+
+        /* --- 3. THE INTRO --- */
+        .intro-box {
+            margin-bottom: 40px;
+            border-left: 4px solid var(--accent);
+            padding-left: 20px;
+        }
+
+        .intro-text {
+            font-size: 18px;
+            color: #ddd;
+            font-weight: 300;
+            font-style: italic; /* Slight slant for sportiness */
+        }
+        .intro-text strong { color: white; font-weight: 800; font-style: normal; }
+
+        /* --- 4. MANUFACTURING BRIEFS --- */
+        .section-title {
+            font-size: 10px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #222;
+            padding-bottom: 5px;
+            margin-top: 50px;
+            font-weight: 800;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid #222;
+            border-radius: 4px; /* Sharper corners = Sportier */
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: white;
+            font-weight: 800;
+            text-transform: uppercase;
+            font-style: italic;
+        }
+
+        .card-tag {
+            display: inline-block;
+            background: var(--accent);
+            color: black; /* High contrast black on yellow */
+            font-size: 10px;
+            padding: 4px 8px;
+            border-radius: 2px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .req-list { list-style: none; margin-top: 15px; }
+        .req-list li {
+            font-size: 14px;
+            color: #ccc;
+            margin-bottom: 10px;
+            padding-left: 15px;
+            position: relative;
+        }
+        .req-list li::before {
+            content: "⚡"; /* Bolt Bullet Point */
+            font-size: 10px;
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        /* --- 5. FOUNDERS --- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .founder-card {
+            background: #151515;
+            padding: 15px;
+            border: 1px solid #333;
+            border-left: 2px solid #555;
+        }
+
+        .founder-name { font-size: 14px; font-weight: 700; color: white; text-transform: uppercase; }
+        .founder-phone {
+            font-size: 13px;
+            color: var(--accent);
+            text-decoration: none;
+            display: block;
+            margin-top: 5px;
+            font-weight: 700;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            background-color: white;
+            color: black;
+            text-align: center;
+            padding: 16px;
+            border-radius: 4px; /* Sharp corners */
+            text-decoration: none;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 30px;
+            font-style: italic;
+        }
+        
+        .email-text-backup {
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            margin-top: 10px;
+            font-family: monospace;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 10px;
+            color: #444;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 400px) {
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <svg class="logo-svg" viewBox="0 0 320 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M40 10 L20 70 H50 L70 10 Z" fill="white"/>
+                
+                <path d="M220 10 H250 L240 70 H210 L220 35 L190 70 H160 L170 10 H200 L190 45 L220 10 Z" fill="white"/>
+                
+                <g transform="translate(115, 40)">
+                    <path d="M-28 0 A 28 28 0 1 0 28 0 A 28 28 0 1 0 -28 0 M-18 0 A 18 18 0 1 1 18 0 A 18 18 0 1 1 -18 0" fill="white" transform="skewX(-15)"/>
+                    <path class="bolt-pulse" d="M-5 -15 L10 -15 L-5 5 L5 5 L-10 20 L-2 0 L-12 0 Z" fill="#ccff00" transform="scale(1.5)"/>
+                </g>
+            </svg>
+            <div class="tagline">Performance Labs</div>
+        </div>
+
+        <div class="intro-box">
+            <p class="intro-text">
+                Most sports nutrition tastes like medicine. 
+                <strong>We are changing that.</strong> 
+                <br><br>
+                We are looking for manufacturing partners to create high-performance fuel that is clean, effective, and palate-friendly.
+            </p>
+        </div>
+
+        <div class="section-title">Manufacturing Briefs</div>
+
+        <div class="card">
+            <span class="card-tag">Product 01: Electrolytes</span>
+            <h3>High-Salt Stick Pack</h3>
+            <ul class="req-list">
+                <li><strong>Specs:</strong> 1000mg Sodium. Zero Sugar.</li>
+                <li><strong>Challenge:</strong> Saltiness usually tastes metallic.</li>
+                <li><strong>Goal:</strong> A clean flavor profile that masks saltiness without bitterness.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <span class="card-tag">Product 02: Energy Gel</span>
+            <h3>30g Hydrogel</h3>
+            <ul class="req-list">
+                <li><strong>Specs:</strong> 30g Carbs (Isomaltulose).</li>
+                <li><strong>Challenge:</strong> Standard gels are too thick/sweet.</li>
+                <li><strong>Goal:</strong> A "water-like" texture that swallows easily. No sticky aftertaste.</li>
+            </ul>
+        </div>
+
+        <div class="section-title">Founders</div>
+
+        <div class="contact-grid">
+            <div class="founder-card">
+                <div class="founder-name">Omkar Sathe</div>
+                <a href="tel:+919579811308" class="founder-phone">+91 9579811308</a>
+            </div>
+            <div class="founder-card">
+                <div class="founder-name">Utkarsh Kale</div>
+                <a href="tel:+917058151196" class="founder-phone">+91 7058151196</a>
+            </div>
+        </div>
+
+        <a href="mailto:ionperformancelabs@gmail.com" class="btn">
+            Email Us
+        </a>
+        <div class="email-text-backup">
+            ionperformancelabs@gmail.com
+        </div>
+
+        <div class="footer">
+            © 2026 ION Performance Labs. Mumbai.
+        </div>
+
+    </div>
+
+</body>
+</html>
