@@ -29,14 +29,14 @@
         .container {
             max-width: 500px;
             margin: 0 auto;
-            padding-top: 50px;
+            padding-top: 40px;
             padding-bottom: 60px;
         }
 
         /* --- 2. HEADER --- */
         .header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         .logo-svg {
@@ -83,7 +83,7 @@
         }
         .intro-text strong { color: white; font-weight: 800; font-style: normal; }
 
-        /* --- 4. PRODUCT VISUAL --- */
+        /* --- 4. PRODUCT VISUAL (BIGGER & FASTER) --- */
         .product-showcase {
             text-align: center;
             margin-bottom: 40px;
@@ -91,12 +91,15 @@
         }
 
         .product-img {
-            max-width: 80%;
+            width: 100%; /* FULL WIDTH */
+            max-width: 450px; /* Cap it so it doesn't get too crazy on desktop */
             height: auto;
             border-radius: 12px;
             border: 1px solid #333;
-            box-shadow: 0 0 30px rgba(204, 255, 0, 0.15); /* Green Glow */
-            /* transform: rotate(-2deg); REMOVED THIS LINE */
+            /* The Glow Effect */
+            box-shadow: 0 0 40px rgba(204, 255, 0, 0.1); 
+            display: block;
+            margin: 0 auto;
         }
 
         .product-caption {
@@ -104,7 +107,7 @@
             color: #555;
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-top: 10px;
+            margin-top: 15px;
         }
 
         /* --- 5. BRIEFS --- */
@@ -255,7 +258,11 @@
         </div>
 
         <div class="product-showcase">
-            <img src="ion-gel.png" alt="ION Flow Gel Prototype" class="product-img">
+            <img src="ion-gel.jpg" 
+                 alt="ION Flow Gel Prototype" 
+                 class="product-img" 
+                 loading="eager" 
+                 fetchpriority="high">
             <div class="product-caption">Prototype Visual // ION Flow Gel</div>
         </div>
 
